@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>learn-react</title>
+</head>
+
+<body onload="startworker()">
+
+    <h1>Hello, World!!</h1>
+    <div id="react-container">
+
+
+    </div>
+    <p>hi </p>
+</body>
+<script type="text/javascript" src="assets/bundle.js"></script>
+<script>
+function startworker() {
+  console.log("outside if");
+  if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('../service-worker.js').then(function(registration) {
+          console.log("success");
+      }).catch(function(err) {
+          console.log("err");
+      })
+  }
+}
+
+</script>
+
+</html>
